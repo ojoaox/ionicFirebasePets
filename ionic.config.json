@@ -1,0 +1,7 @@
+{
+  "name": "ac02-pets",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
