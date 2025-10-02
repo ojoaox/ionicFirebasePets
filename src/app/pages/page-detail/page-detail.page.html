@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{isNewPet ? 'Adicionar Novo Pet' : 'Editar Pet'}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content class="ion-padding">
+  <form #form="ngForm" (ngSubmit)="savePet()">
+    <ion-item>
+      <ion-label position="floating">Nome</ion-label>
+      <ion-input type="text" [(ngModel)]="pet.name" name="name" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Espécie</ion-label>
+      <ion-input type="text" [(ngModel)]="pet.especie" name="especie"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Raça</ion-label>
+      <ion-input type="text" [(ngModel)]="pet.race" name="race"></ion-input>
+    </ion-item>
+
+    <ion-button expand="full" type="submit" class="ion-margin-top">
+      Salvar
+    </ion-button>
+  </form>
+</ion-content>
