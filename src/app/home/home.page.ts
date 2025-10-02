@@ -33,7 +33,7 @@ export class HomePage {
     this.router.navigateByUrl('/page-detail');
   }
   adicionarCuidador(){
-    this.router.navigateByUrl('/cuidador-detail');
+    this.router.navigateByUrl('/cuidador');
   }
 
   editarPet(pet: Pet){
@@ -41,7 +41,7 @@ export class HomePage {
   }
 
   editarCuidador(cuidador: Cuidador){
-    this.router.navigateByUrl(`/cuidador-detail/${cuidador.id}`);
+    this.router.navigateByUrl(`/cuidador/${cuidador.id}`);
   }
 
   async deletarPet(id: string){

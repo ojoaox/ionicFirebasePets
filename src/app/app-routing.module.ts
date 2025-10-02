@@ -20,12 +20,12 @@ const routes: Routes = [
     loadChildren: () => import('./pages/page-detail/page-detail.module').then( m => m.PageDetailPageModule)
   },
   {
-    path: 'cuidador-detail',
-    loadChildren: () => import('./pages/cuidador-detail/cuidador-detail.module').then( m => m.CuidadorDetailPageModule)
+    path: 'cuidador',
+    loadChildren: () => import('./pages/cuidador/cuidador.module').then( m => m.CuidadorPageModule)
   },
   {
-    path: 'cuidador-detail/:id',
-    loadChildren: () => import('./pages/cuidador-detail/cuidador-detail.module').then( m => m.CuidadorDetailPageModule)
+    path: 'cuidador/:id',
+    loadChildren: () => import('./pages/cuidador/cuidador.module').then( m => m.CuidadorPageModule)
   }
 
 ];

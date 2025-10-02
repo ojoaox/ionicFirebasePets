@@ -4,12 +4,12 @@ import { Data, Cuidador } from '../../services/data';
 import { ToastController } from '@ionic/angular';
 
 @Component({
-  selector: 'app-cuidador-detail',
-  templateUrl: './cuidador-detail.page.html',
-  styleUrls: ['./cuidador-detail.page.scss'],
+  selector: 'app-cuidador',
+  templateUrl: './cuidador.page.html',
+  styleUrls: ['./cuidador.page.scss'],
   standalone: false
 })
-export class CuidadorDetailPage implements OnInit {
+export class CuidadorPage implements OnInit {
 
   cuidador: Cuidador = {
     name: '',

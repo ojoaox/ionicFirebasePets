@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { CuidadorDetailPageRoutingModule } from './cuidador-detail-routing.module';
+import { CuidadorPageRoutingModule } from './cuidador-routing.module';
 
-import { CuidadorDetailPage } from './cuidador-detail.page';
+import { CuidadorPage } from './cuidador.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    CuidadorDetailPageRoutingModule
+    CuidadorPageRoutingModule
   ],
-  declarations: [CuidadorDetailPage]
+  declarations: [CuidadorPage]
 })
-export class CuidadorDetailPageModule {}
+export class CuidadorPageModule {}
