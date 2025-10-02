@@ -1,23 +1,14 @@
 <ion-header [translucent]="true">
   <ion-toolbar color="">
-    <ion-title>Gerenciador de Pets e Cuidadores - (AC02 Ionic)</ion-title>
-    <ion-buttons slot="end">
-      <ion-button (click)="adicionarPet()">
-        Adicionar novo pet
-      </ion-button>
-
-      <ion-button (click)="adicionarCuidador()">
-        Adicionar novo cuidador
-      </ion-button>
-    </ion-buttons>
+    <ion-title>Gerenciador de pets e cuidadores</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content class="ion-padding">
-  <h1>Lista de Pets</h1>
+  <h2>Lista de Pets</h2>
   <ion-list>
     <ion-item *ngIf="pets.length === 0">
-      <ion-label>Nenhum pet cadastrado ainda</ion-label>
+      <ion-label>Nenhum pet cadastrado</ion-label>
     </ion-item>
 
     <ion-item *ngFor="let pet of pets" lines="full">
@@ -28,17 +19,24 @@
       </ion-label>
 
       <ion-buttons slot="end">
-        <ion-button (click)="deletarPet(pet.id!)">
+                <ion-button  (click)="editarPet(pet)">
+          <ion-icon color="primary" name="create"></ion-icon>
+        </ion-button>
+        <ion-button  (click)="deletarPet(pet.id!)">
           <ion-icon color="danger" name="trash"></ion-icon>
         </ion-button>
       </ion-buttons>
     </ion-item>
   </ion-list>
+  <br>
+      <ion-button color="success" (click)="adicionarPet()">
+        Adicionar pet
+      </ion-button>
 
-  <h1>Lista de Cuidadores</h1>
+  <h2>Lista de Cuidadores</h2>
   <ion-list>
     <ion-item *ngIf="cuidadores.length === 0">
-      <ion-label>Nenhum cuidador cadastrado ainda</ion-label>
+      <ion-label>Nenhum cuidador cadastrado</ion-label>
     </ion-item>
 
     <ion-item *ngFor="let cuidador of cuidadores" lines="full">
@@ -49,10 +47,21 @@
       </ion-label>
 
       <ion-buttons slot="end">
+                <ion-button (click)="editarCuidador(cuidador)">
+          <ion-icon color="primary" name="create"></ion-icon>
+        </ion-button>
         <ion-button (click)="deletarCuidador(cuidador.id!)">
           <ion-icon color="danger" name="trash"></ion-icon>
         </ion-button>
       </ion-buttons>
     </ion-item>
   </ion-list>
+<br>
+  <div>
+
+
+      <ion-button color="success" (click)="adicionarCuidador()">
+        Adicionar cuidador
+      </ion-button>
+  </div>
 </ion-content>
