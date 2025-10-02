@@ -15,7 +15,7 @@ export class CuidadorDetailPage implements OnInit {
     name: '',
     phone: '',
     experience: 0,
-    especialty: ''
+    specialty: ''
   };
 
   cuidadorId: string | null = null;

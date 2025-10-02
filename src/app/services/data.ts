@@ -31,7 +31,7 @@ export interface Cuidador {
   name: string;
   phone: string;
   experience: number;
-  especialty: string;
+  specialty: string;
   createdAt?: number;
 }
 
@@ -89,7 +89,7 @@ export class Data {
 
   updateCuidador(cuidador: Cuidador) {
     const cuidadorDocRef = doc(this.firestore, `cuidadores/${cuidador.id}`);
-    return updateDoc(cuidadorDocRef, { name: cuidador.name, phone: cuidador.phone, experience: cuidador.experience, especialty: cuidador.especialty });
+    return updateDoc(cuidadorDocRef, { name: cuidador.name, phone: cuidador.phone, experience: cuidador.experience, specialty: cuidador.specialty });
   }
 
   deletarCuidador(id: string) {

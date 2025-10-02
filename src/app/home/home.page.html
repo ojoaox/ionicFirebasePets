@@ -1,6 +1,6 @@
 <ion-header [translucent]="true">
   <ion-toolbar color="">
-    <ion-title>Pets e Cuidadores</ion-title>
+    <ion-title>Gerenciador de Pets e Cuidadores - (AC02 Ionic)</ion-title>
     <ion-buttons slot="end">
       <ion-button (click)="adicionarPet()">
         Adicionar novo pet
@@ -14,49 +14,45 @@
 </ion-header>
 
 <ion-content class="ion-padding">
-
-
   <h1>Lista de Pets</h1>
   <ion-list>
     <ion-item *ngIf="pets.length === 0">
       <ion-label>Nenhum pet cadastrado ainda</ion-label>
     </ion-item>
 
+    <ion-item *ngFor="let pet of pets" lines="full">
+      <ion-label>
+        <h1>{{pet.name}} - {{pet.age}} anos</h1>
+        <h2>{{pet.especie}} - {{pet.race}}</h2>
+        <p>{{pet.obs}}</p>
+      </ion-label>
 
-    <ion-item-sliding *ngFor="let pet of pets">
-      <ion-item lines="full" button (click)="editarPet(pet)">
-        <ion-label>
-          <h1>{{pet.name}}</h1>
-          <p>{{pet.especie}} - {{pet.race}}</p>
-        </ion-label>
-      </ion-item>
+      <ion-buttons slot="end">
+        <ion-button (click)="deletarPet(pet.id!)">
+          <ion-icon color="danger" name="trash"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-item>
+  </ion-list>
 
-      <ion-item-options side="end">
-        <ion-item-option color="danger" (click)="deletarPet(pet.id!)">
-          <ion-icon slot="icon-only" name="trash"></ion-icon>
-        </ion-item-option>
-      </ion-item-options>
-    </ion-item-sliding>
-</ion-list>
-
-<h1>Lista de Cuidadores</h1>
-<ion-list>
-      <ion-item *ngIf="cuidadores.length === 0">
+  <h1>Lista de Cuidadores</h1>
+  <ion-list>
+    <ion-item *ngIf="cuidadores.length === 0">
       <ion-label>Nenhum cuidador cadastrado ainda</ion-label>
     </ion-item>
-<ion-item-sliding *ngFor="let cuidador of cuidadores">
-      <ion-item lines="full" button (click)="editarCuidador(cuidador)">
-        <ion-label>
-          <h1>{{cuidador.name}}</h1>
-          <p>{{cuidador.experience}}</p>
-        </ion-label>
-      </ion-item>
 
-      <ion-item-options side="end">
-        <ion-item-option color="danger" (click)="deletarCuidador(cuidador.id!)">
-          <ion-icon slot="icon-only" name="trash"></ion-icon>
-        </ion-item-option>
-      </ion-item-options>
-    </ion-item-sliding>
-</ion-list>
+    <ion-item *ngFor="let cuidador of cuidadores" lines="full">
+      <ion-label>
+        <h1>{{cuidador.name}} - ({{cuidador.phone}})</h1>
+        <h2>{{cuidador.experience}} anos de experiência</h2>
+        <p>Especialidade: {{cuidador.specialty}}</p>
+      </ion-label>
+
+      <ion-buttons slot="end">
+        <ion-button (click)="deletarCuidador(cuidador.id!)">
+          <ion-icon color="danger" name="trash"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-item>
+  </ion-list>
 </ion-content>

@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/home"></ion-back-button>
     </ion-buttons>
-    <ion-title>{{isNewPet ? 'Adicionar Novo Pet' : 'Editar Pet'}}</ion-title>
+    <ion-title>{{isNewPet ? 'Adicionar Pet' : 'Editar Pet'}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -23,6 +23,16 @@
     <ion-item>
       <ion-label position="floating">Raça</ion-label>
       <ion-input type="text" [(ngModel)]="pet.race" name="race"></ion-input>
+    </ion-item>
+
+        <ion-item>
+      <ion-label position="floating">Idade (Anos)</ion-label>
+      <ion-input type="number" [(ngModel)]="pet.age" name="age"></ion-input>
+    </ion-item>
+
+      <ion-item>
+      <ion-label position="floating">Observações Adicionais</ion-label>
+      <ion-input rows="3" type="text" [(ngModel)]="pet.obs" name="obs"></ion-input>
     </ion-item>
 
     <ion-button expand="full" type="submit" class="ion-margin-top">
