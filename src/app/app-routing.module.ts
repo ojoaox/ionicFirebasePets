@@ -26,7 +26,15 @@ const routes: Routes = [
   {
     path: 'cuidador/:id',
     loadChildren: () => import('./pages/cuidador/cuidador.module').then( m => m.CuidadorPageModule)
+  },  {
+    path: 'register',
+    loadChildren: () => import('./pages/register/register.module').then( m => m.RegisterPageModule)
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
   }
+
 
 ];
 
