@@ -17,8 +17,8 @@ import { provideAuth, getAuth } from '@angular/fire/auth'
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
     provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
 
-    provideFirestore(() => getFirestore())
-    provideAuth(() => getAuth())
+    provideFirestore(() => getFirestore()),
+    provideAuth(() => getAuth()),
   ],
   bootstrap: [AppComponent],
 })
